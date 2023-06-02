@@ -1,4 +1,68 @@
 /* css */
 body {
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+ul.menu {
+    display: flex;
+}
+
+ul.menu, ul.submenu {
+    list-style: none;
+    padding-left: 0;
+}  
+
+li {
+    position: relative;
+}
+
+li:focus-within > .submenu,
+li:hover > .submenu {
+    display: flex;
+    /*clip: auto;
+    width: auto;
+    height: auto;
+    margin: 0;*/
+}
+
+a {
+    display: block;
+    color:black;
+    text-decoration: none;
+    background-color: #ccc;
+    padding: 1em;
+    white-space: nowrap;
+}
+
+li:hover > a,
+a:hover {
+    background-color: pink;
+}
+
+a:focus {
+    outline: none;
+    background-color: rgb(253, 253, 76);
+}
+
+.submenu {
+     display: none;
+    flex-direction: column;
+    position: absolute;
+    /*padding-top: 1em;*/
+
+    /*clip: (0,0,0,0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;*/
+}
+
+.menu--vert {
+    flex-direction: column;
+    width: :200px;
+}
+
+.menu--vert .submenu {
+    top: 0;
+    left: 100%;
 }
